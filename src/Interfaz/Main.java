@@ -20,10 +20,10 @@ public class Main {
         DiaActual da= new DiaActual(40,"nublado");
         List<PronosticoExtendido> pE = new ArrayList<>();
 
-        pE.add(new PronosticoExtendido(new Date(1993,03,30),20,60,"jueves"));
-        pE.add(new PronosticoExtendido(new Date(1993,03,31),20,60,"jueves"));
-        pE.add(new PronosticoExtendido(new Date(1993,04,1),20,60,"jueves"));
-        pE.add(new PronosticoExtendido(new Date(1993,04,2),20,60,"jueves"));
+        pE.add(new PronosticoExtendido(new Date(1993,03,30),20,60,DayOfWeek.Monday));
+        pE.add(new PronosticoExtendido(new Date(1993,03,31),20,60,DayOfWeek.Friday));
+        pE.add(new PronosticoExtendido(new Date(1993,04,1),20,60,DayOfWeek.Sunday));
+        pE.add(new PronosticoExtendido(new Date(1993,04,2),20,60,DayOfWeek.Monday));
 
         Pronostico pronostico= new Pronostico(v,at,da,pE,l);
 

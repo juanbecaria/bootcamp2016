@@ -2,17 +2,16 @@ package negocio;
 
 import java.util.Date;
 
-/**
- * Created by juanb on 9/26/2016.
- */
+
 public class PronosticoExtendido {
 
     private Date fecha;
     private float tempMin;
     private float tempMax;
-    private String dia;
+    private DayOfWeek dia;
 
-    public PronosticoExtendido(Date fecha, float tempMin, float tempMax, String dia) {
+
+    public PronosticoExtendido(Date fecha, float tempMin, float tempMax, DayOfWeek dia) {
         this.fecha = fecha;
         this.tempMin = tempMin;
         this.tempMax = tempMax;

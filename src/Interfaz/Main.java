@@ -1,10 +1,11 @@
 package Interfaz;
 
 import negocio.*;
-
+import datos.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.DayOfWeek;
 
 /**
  * Created by juanb on 9/26/2016.
@@ -14,18 +15,28 @@ public class Main {
 
 
 
-        Atmosfera at = new Atmosfera(10,20,30, 0);
-        Viento v= new Viento(180,20);
-        Localidad l= new Localidad("Cordoba","Cordoba","Argentina");
-        DiaActual da= new DiaActual(40,"nublado");
+
+
+        Atmosfera at = new Atmosfera(10, 20, 30, 0);
+        Viento v = new Viento(180, 20);
+        Localidad l = new Localidad("rio cuarto", "Cordoba", "Argentina");
+        DiaActual da = new DiaActual(new Date(1993, 3, 30), 40, "nublado");
         List<PronosticoExtendido> pE = new ArrayList<>();
+        pE.add(new PronosticoExtendido(new Date(1993, 9, 30), 20, 60, DayOfWeek.MONDAY,"soleado"));
+        pE.add(new PronosticoExtendido(new Date(1993, 3, 31), 20, 60, DayOfWeek.FRIDAY,"soleado"));
+        pE.add(new PronosticoExtendido(new Date(1993, 4, 1), 20, 60, DayOfWeek.SUNDAY,"soleado"));
+        pE.add(new PronosticoExtendido(new Date(1993, 4, 2), 20, 60, DayOfWeek.SATURDAY,"soleado"));
 
-        pE.add(new PronosticoExtendido(new Date(1993,03,30),20,60,DayOfWeek.Monday));
-        pE.add(new PronosticoExtendido(new Date(1993,03,31),20,60,DayOfWeek.Friday));
-        pE.add(new PronosticoExtendido(new Date(1993,04,1),20,60,DayOfWeek.Sunday));
-        pE.add(new PronosticoExtendido(new Date(1993,04,2),20,60,DayOfWeek.Monday));
+        Pronostico pronostico = new Pronostico(v, at, da, pE, l);
+        GestorPronostico gp= new GestorPronostico();
 
-        Pronostico pronostico= new Pronostico(v,at,da,pE,l);
+
+        gp.guardarPronostico(pronostico);
+
+
+
+
+
 
         System.out.println(pronostico);
     }

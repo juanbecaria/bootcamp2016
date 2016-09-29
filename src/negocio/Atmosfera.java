@@ -36,9 +36,9 @@ public class Atmosfera {
     @Override
     public String toString() {
         return "Atmosfera{" +
-                "presion=" + presion +"in"+
-                ", visibilidad=" + visibilidad +"miles"+
-                ", humedad=" + humedad +"%"+
+                "presion=" + presion + "in" +
+                ", visibilidad=" + visibilidad + "miles" +
+                ", humedad=" + humedad + "%" +
                 ", ambienteAscendente=" + ambienteAscendente +
                 '}';
     }
